@@ -13,9 +13,6 @@ namespace PointOfSaleTerminalLibrary
 		public const decimal aDiscountAmount = 0.75M;
 		public const decimal cDiscountAmount = 1.00M;
 
-		public int aDiscountLeftover = 0;
-		public int cDiscountLeftover = 0;
-
 		public decimal savings = 0.0M;
 
 		/// <summary>
@@ -73,13 +70,11 @@ namespace PointOfSaleTerminalLibrary
 				{
 					total -= aDiscountAmount;
 					numberOfProducts[0] -= aDiscountQuantity;
-					aDiscountLeftover = numberOfProducts[0];
 				}
 				else if (numberOfProducts[2] >= cDiscountQuantity)
 				{
 					total -= cDiscountAmount;
 					numberOfProducts[2] -= cDiscountQuantity;
-					cDiscountLeftover = numberOfProducts[2];
 				}
 				else
 					discounts = false;
@@ -90,6 +85,10 @@ namespace PointOfSaleTerminalLibrary
 			return total;
 		}
 
+		/// <summary>
+		/// A method used for the GUI to return how much has been saved (so far).
+		/// </summary>
+		/// <returns>Returns the total amount saved</returns>
 		public decimal CalculateSavings() 
 		{
 			return savings;
