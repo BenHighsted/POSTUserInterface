@@ -1,0 +1,25 @@
+﻿<Window x:Class="PointOfSaleTerminalUserInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointOfSaleTerminalUserInterface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Enter some products (A/B/C/D) seperated by commas" Margin="5"/>
+        <TextBox Grid.Row="1" Name="MyTextBox" Margin="5"/>
+        <Button Grid.Row="2" Content="Scan" Margin="10,3,184,3" Click="Scan"/>
+        <Button Grid.Row="2" Content="Clear" Margin="179,3,10,4" Click="Clear"/>
+        <Label Grid.Row="3" Name="Label1" Margin="5"/>
+        <Label Grid.Row="4" Name="Label2" Margin="5"/>
+    </Grid>
+</Window>
